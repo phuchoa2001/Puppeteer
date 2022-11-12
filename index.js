@@ -1,7 +1,17 @@
 const app = require("express")();
 
+const UserModel = require('./app/models/user');
+
+const db = require('./config/db/index')
+
 let chrome = {};
 let puppeteer;
+
+
+let numberAll = 0;
+
+
+db.connect();
 
 if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
   chrome = require("chrome-aws-lambda");
