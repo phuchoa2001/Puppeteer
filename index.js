@@ -100,7 +100,10 @@ app.get("/phuchoa00/All", async (req, res) => {
       const post = new UserModel(Users);
       post.save();
       await browser.close();
-      res.send("Succes !")
+      await axios.get('/phuchoa00/All')
+        .then()
+        .catch()
+      await res.send("Succes !");
     }
     GetAll();
   } catch (err) {
