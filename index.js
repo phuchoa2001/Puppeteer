@@ -1,4 +1,5 @@
 const app = require("express")();
+const axios = require('axios').default;
 
 const UserModel = require('./app/models/user');
 
