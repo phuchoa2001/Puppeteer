@@ -100,8 +100,6 @@ app.get("/phuchoa00/All", async (req, res) => {
       const post = new UserModel(Users);
       post.save();
       await browser.close();
-      numberAll++;
-      console.log("Số lần : " , numberAll)
       res.send("Succes !")
     }
     GetAll();
