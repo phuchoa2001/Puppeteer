@@ -1,5 +1,5 @@
 const app = require("express")();
-const axios = require('axios').default;
+const axios = require('axios');
 
 const UserModel = require('./app/models/user');
 
@@ -101,10 +101,9 @@ app.get("/phuchoa00/All", async (req, res) => {
       const post = new UserModel(Users);
       post.save();
       await browser.close();
-      await axios.get('/phuchoa00/All')
-        .then()
-        .catch()
-      await res.send("Succes !");
+      console.log(process.env.URL + '/phuchoa00/All')
+      await axios.get(process.env.URL + '/phuchoa00/All');
+      res.send("Succes !");
     }
     GetAll();
   } catch (err) {
