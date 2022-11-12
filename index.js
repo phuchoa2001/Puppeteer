@@ -99,11 +99,8 @@ app.get("/phuchoa00/All", async (req, res) => {
       const Users = { ...User, ...Info, ...Info2, ...Info3 };
       const post = new UserModel(Users);
       post.save();
-      setTimeout(() => {
-        console.log("numberAll :", numberAll)
-        numberAll++;
-        GetAll();
-      }, 2000);
+      await browser.close();
+      res.send("Succes !")
     }
     GetAll();
   } catch (err) {
