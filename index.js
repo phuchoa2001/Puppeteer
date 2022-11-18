@@ -21,7 +21,7 @@ if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
   puppeteer = require("puppeteer");
 }
 
-app.get("/phuchoa00/All", async (req, res) => {
+app.get("/phuchoa00/:all", async (req, res) => {
   let options = {};
 
   if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
